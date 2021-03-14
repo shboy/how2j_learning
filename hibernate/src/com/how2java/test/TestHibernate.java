@@ -57,7 +57,17 @@ public class TestHibernate {
 
     }
 
-    public void testShow() {
+    @Test
+    public void testStatus() {
+        s.beginTransaction();
+        Product p = new Product();
+        p.setName("p1");
+        System.out.println("此时p是瞬间状态");
+        s.save(p);
+        System.out.println("此时p是持久状态");
+        s.getTransaction().commit();
+        s.close(); // TODO: 这里关闭之后，after那里会抛异常
+        System.out.println("此时p是托管状态");
     }
 
     @Test
@@ -67,6 +77,16 @@ public class TestHibernate {
         Category c = new Category();
         c.setName("分类1");
         s.save(c);
+
+        s.getTransaction().commit();
+    }
+
+    @Test
+    public void testReadData() {
+        s.beginTransaction();
+
+        Product p = (Product) s.get(Product.class, 6);
+        System.out.println(String.format("id=6的产品名称是： %s", p.getName()));
 
         s.getTransaction().commit();
     }
