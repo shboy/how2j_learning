@@ -2,3 +2,5 @@
 target
 .idea
 external_lib
+.DS_Store
+out
