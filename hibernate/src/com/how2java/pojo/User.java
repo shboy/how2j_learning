@@ -4,14 +4,9 @@ import lombok.Data;
 
 import java.util.Set;
 
-/**
- * @author shenhao
- * @date 2021/3/14
- */
 @Data
-public class Category {
+public class User {
     private int id;
     private String name;
-    private Set<Product> products;
-
+    Set<Product> products;
 }
