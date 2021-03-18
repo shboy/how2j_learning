@@ -186,6 +186,23 @@ public class TestHibernate {
     }
 
     @Test
+    public void insertCate2Product() {
+        s.beginTransaction();
+
+        IntStream.range(0, 10).forEach(i -> {
+            Category c = new Category();
+            c.setName("c"+i);
+            s.save(c);
+
+            Product p = (Product) s.get(Product.class, 8);
+            p.setCategory(c);
+            s.update(p);
+        });
+
+        s.getTransaction().commit();
+    }
+
+    @Test
     public void testOne2Many() {
         s.beginTransaction();
 
