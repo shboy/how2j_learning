@@ -55,10 +55,63 @@ public class TestHibernateContest {
     @Test
     public void testLazyCascade() {
         s.beginTransaction();
-        Category c = (Category) s.get(Category.class, 3);
+        Category c = (Category) s.get(Category.class, 4);
         s.delete(c);
         s.getTransaction().commit();
     }
 
     // TODO: 级联没有看懂
+
+
+    @Test
+    public void test1stClassCache() {
+        s.beginTransaction();
+        System.out.println("log1");
+        Category c1 = (Category)s.get(Category.class, 1);
+        System.out.println("log2");
+        Category c2= (Category)s.get(Category.class, 1);
+        System.out.println("log3");
+        s.getTransaction().commit();
+    }
+
+    @Test
+    public void test2rdCache() {
+        s.beginTransaction();
+        Category c1 = (Category)s.get(Category.class, 1);
+        System.out.println("log1");
+        Category c2= (Category)s.get(Category.class, 1);
+        System.out.println("log2");
+        s.getTransaction().commit();
+        s.close();
+        Session s2 = sf.openSession();
+        s2.beginTransaction();
+        Category c3 = (Category)s2.get(Category.class, 1);
+        System.out.println("log3");
+        s2.getTransaction().commit();
+    }
+
+    @Test
+    public void testPage() {
+        s.beginTransaction();
+
+        String name = "iphone";
+
+        Criteria c= s.createCriteria(Product.class);
+        c.add(Restrictions.like("name", "%"+name+"%"));
+        c.setFirstResult(2);
+        c.setMaxResults(5);
+
+        List<Product> ps = c.list();
+        for (Product p : ps) {
+            System.out.println(p.getName());
+
+        }
+
+        s.getTransaction().commit();
+    }
+
+    @Test
+    public void testOptimisticLocking() {
+        //
+    }
 }
