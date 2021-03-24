@@ -14,6 +14,14 @@
             <result>hello.jsp</result>
         </action>
 
+        <action name="showProduct" class="com.how2java.action.ProductAction" method="show">
+            <result name="show">show.jsp</result>
+        </action>
+
+        <action name="showTime" class="com.how2java.action.ShowTime" method="getCurrentTime">
+            <result name="show">showTime.jsp</result>
+        </action>
+
     </package>
 
 </struts>
