@@ -15,4 +15,5 @@ public class Product {
     private float price;
     Category category;
     Set<User> users;
+    int version;
 }

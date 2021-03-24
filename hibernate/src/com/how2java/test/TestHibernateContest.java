@@ -110,8 +110,5 @@ public class TestHibernateContest {
         s.getTransaction().commit();
     }
 
-    @Test
-    public void testOptimisticLocking() {
-        //
-    }
+
 }
