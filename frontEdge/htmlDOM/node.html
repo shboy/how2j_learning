@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>node</title>
+</head>
+<body>
+    <div id="d1">hello HTML DOM</div>
+</body>
+<script>
+    function p(s){
+        document.write(s);
+        document.write("<br>");
+    }
+    var  div1 = document.getElementById("d1");
+    p("文档节点"+document);
+    p("元素"+div1);
+    p("属性节点"+div1.attributes[0]);
+    p("内容节点"+div1.childNodes[0]);
+</script>
+
+</html>
