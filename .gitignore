@@ -4,3 +4,5 @@ target
 external_lib
 .DS_Store
 out
+tomcat
+tomcat7-8080-idea

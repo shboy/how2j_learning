@@ -1,11 +1,14 @@
 package com.how2java.pojo;
 
-import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("p")
 public class Product {
     private int id;
-    private String name;
-    private float price;
+    private String name = "product 1";
+    @Autowired
+    private Category category;
 
     public int getId() {
         return id;
@@ -23,11 +26,12 @@ public class Product {
         this.name = name;
     }
 
-    public float getPrice() {
-        return price;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
