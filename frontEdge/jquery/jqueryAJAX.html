@@ -1,0 +1,22 @@
+<script src="https://how2j.cn/study/jquery.min.js"></script>
+
+<div id="checkResult"></div>
+
+输入账号 :<input id="name" type="text">
+
+<script>
+  $(function(){
+    $("#name").keyup(function(){
+      var page = "./checkName.jsp";
+      var value = $(this).val();
+      $.ajax({
+        url: page,
+        data:{"name":value},
+        success: function(result){
+          $("#checkResult").html(result);
+        }
+      });
+    });
+  });
+
+</script>

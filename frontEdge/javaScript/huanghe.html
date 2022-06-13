@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黄鹤-江南皮革厂</title>
+</head>
+<style>
+    body{
+        font-family: 宋体;
+        font-size: 16px;
+    }
+    span{
+        display: inline-block;
+        border: 1px solid lightgray;
+        width: 120px;
+        height: 20px;
+        margin: 0px 3px;
+    }
+    input{
+        display: inline-block;
+        width: 120px;
+        height: 26px;
+        margin: 5px 3px;
+    }
+    button{
+        width: 60px;
+        height: 30px;
+    }
+    textarea{
+        width:100%;
+        height:150px;
+        margin-top:20px;
+        font-family: 宋体;
+        font-size: 10px;
+    }
+</style>
+
+<body>
+    <span align="left">地名:</span><input name="text1" size="20" value="浙江">
+    <span align="left">公司类型:</span><input name="text2" size="20" value="互联网公司"></br>
+    <span align="left">公司名称:</span><input name="text3" size="20" value="阿里九九">
+    <span align="left">老板姓名:</span><input name="text4" size="20" value="牛风了"></br>
+    <span align="left">money:</span><input name="text5" size="20" value="一万">
+    <span align="left">产品:</span><input name="text6" size="20" value="贴膜"></br>
+    <span align="left">价格计量单位:</span><input name="text7" size="20" value="百">
+    </br></br>
+    <div align="center">
+        <button onclick="generate('result')">生成</button></br>
+    </div>
+    <textarea id="result"></textarea>
+</body>
+
+<script>
+    var text1 = document.getElementsByName("text1");
+    var text2 = document.getElementsByName("text2");
+    var text3 = document.getElementsByName("text3");
+    var text4 = document.getElementsByName("text4");
+    var text5 = document.getElementsByName("text5");
+    var text6 = document.getElementsByName("text6");
+    var text7 = document.getElementsByName("text7");
+    var text;
+    function sum(text1, text2, text3, text4, text5, text6, text7){
+        text = text1[0].value +"最大"+ text2[0].value + text3[0].value + "倒闭了，王八蛋老板" + text4[0].value + "吃喝嫖赌，欠下了"+ text5[0].value + "个亿，" +  "带着他的小姨子跑了!我们没有办法，拿着" + text6[0].value +"抵工资!原价都是一" + text7[0].value +"多、两"+ text7[0].value +"多、三"+ text7[0].value +"多的"+ text7[0].value +"，" +  "现在全部只卖二十块，统统只要二十块!" + text4[0].value + "王八蛋，你不是人!我们辛辛苦苦给你干了大半年，" + "你不发工资，你还我血汗钱，还我血汗钱!";
+        return text;
+    }
+    function generate(id){
+        text = sum(text1, text2, text3, text4, text5, text6, text7);
+        document.getElementById(id.toString()).value = text;
+        var val = document.getElementById(id.toString()).value;
+        return val;
+    }
+</script>
