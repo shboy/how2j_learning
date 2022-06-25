@@ -6,3 +6,5 @@ external_lib
 out
 tomcat
 tomcat7-8080-idea
+RemoteSystemsTempFiles
+.metadata
