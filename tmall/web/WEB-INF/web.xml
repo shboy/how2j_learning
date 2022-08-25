@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
     <servlet>
+        <servlet-name>ProductImageServlet</servlet-name>
+        <servlet-class>tmall.servlet.ProductImageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProductImageServlet</servlet-name>
+        <url-pattern>/productImageServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>CategoryServlet</servlet-name>
         <servlet-class>tmall.servlet.CategoryServlet</servlet-class>
     </servlet>
@@ -14,7 +24,7 @@
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/productServlet</url-pattern>
     </servlet-mapping>
-    
+
     <servlet-mapping>
         <servlet-name>CategoryServlet</servlet-name>
         <url-pattern>/categoryServlet</url-pattern>
