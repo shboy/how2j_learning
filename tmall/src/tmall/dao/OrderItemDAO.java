@@ -245,9 +245,6 @@ public class OrderItemDAO {
 			o.setOrderItems(ois);
 			o.setTotalNumber(totalNumber);
 		}
-		
-		
-		
 	}
 
 	public void fill(Order o) {
