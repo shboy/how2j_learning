@@ -6,7 +6,7 @@
 function showProductsAsideCategorys(cid){
 	$("div.eachCategory[cid="+cid+"]").css("background-color","white");
 	$("div.eachCategory[cid="+cid+"] a").css("color","#87CEFA");
-	$("div.productsAsideCategorys[cid="+cid+"]").show();
+	$("div.productsAsideCategorys[cid="+cid+"]").show(;
 }
 
 
